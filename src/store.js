@@ -4,7 +4,7 @@ import { composeWithDevTools} from "redux-devtools-extension"
 import { productListReducer,productDetailsReducer } from "./reducers/productReducer"
 import { CartReducer } from "./reducers/cartReducer"
 import { userLoginReducer, userRegisterReducer,userDetailsReducer,userUpdateProfileReducer} from "./reducers/userReducer"
-import { orderCreateReducer,orderDetailsReducer } from "./reducers/orderReducer"
+import { orderCreateReducer,orderDetailsReducer,orderPayReducer } from "./reducers/orderReducer"
 
 
 
@@ -18,6 +18,7 @@ const reducer=combineReducers({
     userUpdateProfile:userUpdateProfileReducer,
     orderCreate:orderCreateReducer,
     orderDetails:orderDetailsReducer,
+    orderPay:orderPayReducer,
     
 })
 //reducers-type of event lIsteners with action and initial state //basically kisi action ke hone pr kya change ho
