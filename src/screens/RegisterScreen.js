@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+ import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../components/FormContainer";
@@ -13,8 +13,8 @@ function RegisterScreen({ location,history }) {
   const [message,setMessage]=useState(null)
   const dispatch=useDispatch()
   const userRegister=useSelector(state=>state.userRegister)
-
-  const {loading,error,userInfo}=userRegister
+//loading in userRegister
+  const {error,userInfo}=userRegister
 
   const redirect = location.search ? location.search.split("=")[1] : "/";
 
@@ -26,7 +26,7 @@ function RegisterScreen({ location,history }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if(password!=confirmPassword)
+    if(password!==confirmPassword)
     setMessage("passwords don't match")
     else
     {

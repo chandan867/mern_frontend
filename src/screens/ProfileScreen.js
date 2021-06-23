@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserDetails,updateUserProfile} from "../actions/userAction";
@@ -15,7 +15,8 @@ function ProfileScreen({ location,history }) {
   const dispatch=useDispatch()
 
   const userDetails=useSelector(state=>state.userDetails)
-  const {loading,error,user}=userDetails
+  const {error,user}=userDetails
+  //loading in userDetails
 
   const userLogin=useSelector(state=>state.userLogin)
   const {userInfo}=userLogin
@@ -45,7 +46,7 @@ function ProfileScreen({ location,history }) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if(password!=confirmPassword)
+    if(password!==confirmPassword)
     setMessage("passwords don't match")
     else
     {
